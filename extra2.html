@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapoor Township - Premium Housing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'rgb(138, 43, 226)',
+                        secondary: 'rgb(79, 70, 229)',
+                        dark: '#0f172a'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .navbar { transition: all 0.3s ease; }
+        .navbar.scrolled { background-color: rgba(15, 23, 42, 0.95) !important; }
+        .carousel-item { height: 100vh; min-height: 500px; }
+        .carousel-item img { object-fit: cover; height: 100%; }
+        .card { transition: transform 0.3s ease, box-shadow 0.3s ease; overflow: hidden; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .card-img-top { transition: transform 0.5s ease; }
+        .card:hover .card-img-top { transform: scale(1.05); }
+        .accordion-button:not(.collapsed) { background-color: rgba(138, 43, 226, 0.1); }
+        .theme-toggle { cursor: pointer; }
+        .interactive-map { height: 400px; background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); }
+        .property-card { transform-style: preserve-3d; transform: perspective(1000px); }
+        .property-3d { transform: translateZ(20px); }
+        .material-card { transform: translateY(0); transition: transform 0.3s ease; }
+        .material-card:hover { transform: translateY(-10px); }
+        [data-aos] { transition: all 1s ease; }
+        .aos-init { opacity: 0; }
+        .aos-animate { opacity: 1; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bolder d-flex align-items-center" href="#">
+                <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 36px; height: 36px;">
+                    <i class="bi bi-building text-white"></i>
+                </div>
+                <span>Singapoor <span class="text-primary">Township</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active fw-medium" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="#materials">Materials</a></li>
+                    <li class="nav-item"><a class="nav-link fw-medium" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-3">
+                        <button class="btn btn-outline-primary theme-toggle d-flex align-items-center" id="themeToggle">
+                            <i class="bi bi-moon-fill me-1"></i> <span>Dark</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Carousel -->
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="position-absolute w-100 h-100 bg-dark opacity-50"></div>
+                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" class="d-block w-100" alt="Luxury Residence">
+                <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                    <h2 class="display-3 fw-bold mb-4">Premium Living Spaces</h2>
+                    <p class="lead fs-4 mb-5">Experience luxury redefined in our exclusive township</p>
+                    <div class="d-flex gap-3 justify-content-center">
+                        <a href="#projects" class="btn btn-primary btn-lg px-5 py-3">Explore Properties</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg px-5 py-3">Schedule Tour</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="position-absolute w-100 h-100 bg-dark opacity-50"></div>
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" class="d-block w-100" alt="Modern Architecture">
+                <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                    <h2 class="display-3 fw-bold mb-4">Innovative Designs</h2>
+                    <p class="lead fs-4 mb-5">Cutting-edge architecture meets timeless elegance</p>
+                    <a href="#about" class="btn btn-primary btn-lg px-5 py-3">Our Philosophy</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="position-absolute w-100 h-100 bg-dark opacity-50"></div>
+                <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" class="d-block w-100" alt="Sustainable Living">
+                <div class="carousel-caption d-flex flex-column justify-content-center h-100">
+                    <h2 class="display-3 fw-bold mb-4">Sustainable Communities</h2>
+                    <p class="lead fs-4 mb-5">Eco-friendly living without compromising on luxury</p>
+                    <a href="#contact" class="btn btn-primary btn-lg px-5 py-3">Join Our Community</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="py-5 bg-gray-100">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3 col-6 text-center">
+                    <div class="display-4 fw-bold text-primary">25+</div>
+                    <div class="text-muted">Years Experience</div>
+                </div>
+                <div class="col-md-3 col-6 text-center">
+                    <div class="display-4 fw-bold text-primary">120+</div>
+                    <div class="text-muted">Projects Completed</div>
+                </div>
+                <div class="col-md-3 col-6 text-center">
+                    <div class="display-4 fw-bold text-primary">5000+</div>
+                    <div class="text-muted">Happy Residents</div>
+                </div>
+                <div class="col-md-3 col-6 text-center">
+                    <div class="display-4 fw-bold text-primary">15</div>
+                    <div class="text-muted">Awards Won</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Properties -->
+    <div class="container py-5" id="projects">
+        <div class="text-center mb-5">
+            <h2 class="display-4 fw-bold mb-3">Featured Properties</h2>
+            <p class="lead text-muted mb-5">Discover our premium residential offerings</p>
+            <div class="d-flex justify-content-center mb-4">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-outline-primary active">All</button>
+                    <button type="button" class="btn btn-outline-primary">Luxury</button>
+                    <button type="button" class="btn btn-outline-primary">Family</button>
+                    <button type="button" class="btn btn-outline-primary">Eco</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0 shadow property-card overflow-hidden">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Luxury Villa">
+                        <div class="position-absolute top-0 end-0 m-3">
+                            <span class="badge bg-primary">Featured</span>
+                        </div>
+                        <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-50 text-white">
+                            <div class="d-flex justify-content-between">
+                                <div class="property-3d">
+                                    <h5 class="mb-0">Oceanview Villa</h5>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-geo-alt me-1"></i> Sentosa Cove
+                                    </div>
+                                </div>
+                                <div class="property-3d text-end">
+                                    <div class="fs-5 fw-bold">$4.2M</div>
+                                    <div class="small">6,500 sq.ft</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body property-3d">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div><i class="bi bi-house-door me-1"></i> 5 Bedrooms</div>
+                            <div><i class="bi bi-bath me-1"></i> 6 Bathrooms</div>
+                            <div><i class="bi bi-car-front me-1"></i> 3 Garage</div>
+                        </div>
+                        <p class="card-text">Stunning oceanfront property with panoramic views, infinity pool, and smart home technology.</p>
+                        <div class="d-flex justify-content-between mt-auto pt-3">
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                            <a href="#" class="btn btn-sm btn-primary">Schedule Tour</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0 shadow property-card overflow-hidden">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1600585152915-d208bec867a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Modern Penthouse">
+                        <div class="position-absolute top-0 end-0 m-3">
+                            <span class="badge bg-success">New</span>
+                        </div>
+                        <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-50 text-white">
+                            <div class="d-flex justify-content-between">
+                                <div class="property-3d">
+                                    <h5 class="mb-0">Skyline Penthouse</h5>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-geo-alt me-1"></i> Marina Bay
+                                    </div>
+                                </div>
+                                <div class="property-3d text-end">
+                                    <div class="fs-5 fw-bold">$3.8M</div>
+                                    <div class="small">5,200 sq.ft</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body property-3d">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div><i class="bi bi-house-door me-1"></i> 4 Bedrooms</div>
+                            <div><i class="bi bi-bath me-1"></i> 5 Bathrooms</div>
+                            <div><i class="bi bi-car-front me-1"></i> 2 Garage</div>
+                        </div>
+                        <p class="card-text">Luxurious penthouse with panoramic city views, private elevator, and rooftop terrace.</p>
+                        <div class="d-flex justify-content-between mt-auto pt-3">
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                            <a href="#" class="btn btn-sm btn-primary">Schedule Tour</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0 shadow property-card overflow-hidden">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Garden Residence">
+                        <div class="position-absolute top-0 end-0 m-3">
+                            <span class="badge bg-info">Eco</span>
+                        </div>
+                        <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-50 text-white">
+                            <div class="d-flex justify-content-between">
+                                <div class="property-3d">
+                                    <h5 class="mb-0">Botanical Residence</h5>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-geo-alt me-1"></i> East Coast
+                                    </div>
+                                </div>
+                                <div class="property-3d text-end">
+                                    <div class="fs-5 fw-bold">$2.9M</div>
+                                    <div class="small">4,800 sq.ft</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body property-3d">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div><i class="bi bi-house-door me-1"></i> 4 Bedrooms</div>
+                            <div><i class="bi bi-bath me-1"></i> 4 Bathrooms</div>
+                            <div><i class="bi bi-car-front me-1"></i> 2 Garage</div>
+                        </div>
+                        <p class="card-text">Sustainable living with vertical gardens, solar panels, and rainwater harvesting system.</p>
+                        <div class="d-flex justify-content-between mt-auto pt-3">
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                            <a href="#" class="btn btn-sm btn-primary">Schedule Tour</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="#" class="btn btn-outline-primary px-5 py-3">View All Properties</a>
+        </div>
+    </div>
+
+    <!-- Interactive Map -->
+    <div class="py-5 bg-gray-100" id="about">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold mb-3">Prime Locations</h2>
+                <p class="lead text-muted mb-5">Explore our premium developments across Singapore</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="interactive-map rounded-4 shadow-lg position-relative overflow-hidden">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-10"></div>
+                        <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+                            <h3 class="mb-3">Singapore Map</h3>
+                            <p>Interactive property locations</p>
+                            <button class="btn btn-light mt-2">Explore Map</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="bg-white rounded-4 p-4 shadow-lg h-100">
+                        <h3 class="mb-4">Strategic Development Locations</h3>
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-3">
+                                <i class="bi bi-geo fs-3"></i>
+                            </div>
+                            <div>
+                                <h5>Central Business District</h5>
+                                <p class="mb-0">Luxury high-rise residences with panoramic city views and premium amenities.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-3">
+                                <i class="bi bi-tree fs-3"></i>
+                            </div>
+                            <div>
+                                <h5>East Coast Waterfront</h5>
+                                <p class="mb-0">Beachfront properties with private access and sustainable designs.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-3">
+                                <i class="bi bi-building fs-3"></i>
+                            </div>
+                            <div>
+                                <h5>Sentosa Cove</h5>
+                                <p class="mb-0">Exclusive villas with yacht access and world-class facilities.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-3">
+                                <i class="bi bi-flower1 fs-3"></i>
+                            </div>
+                            <div>
+                                <h5>Botanic Gardens Area</h5>
+                                <p class="mb-0">Tranquil residences surrounded by nature with eco-friendly features.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Premium Materials -->
+    <div class="container py-5" id="materials">
+        <div class="text-center mb-5">
+            <h2 class="display-4 fw-bold mb-3">Premium Materials</h2>
+            <p class="lead text-muted mb-5">Quality craftsmanship with sustainable materials</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card material-card h-100 border-0 shadow overflow-hidden" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1617103996702-96ff29b1c467?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Sustainable Wood">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="card-title mb-0">Sustainable Timber</h5>
+                            <span class="badge bg-success">Eco</span>
+                        </div>
+                        <p class="card-text">FSC-certified wood from responsibly managed forests with enhanced durability treatments.</p>
+                        <div class="d-flex justify-content-between mt-4">
+                            <div>
+                                <div class="small text-muted">Durability</div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="small text-muted">Sustainability</div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-success" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card material-card h-100 border-0 shadow overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1617103996702-96ff29b1c467?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Energy Glass">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="card-title mb-0">Smart Glass</h5>
+                            <span class="badge bg-info">Tech</span>
+                        </div>
+                        <p class="card-text">Electrochromic glass that tints automatically to control heat and light, reducing energy costs.</p>
+                        <div class="d-flex justify-content-between mt-4">
+                            <div>
+                                <div class="small text-muted">Energy Saving</div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="small text-muted">UV Protection</div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-success" style="width: 98%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <div class="card material-card h-100 border-0 shadow overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1617103996702-96ff29b1c467?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Recycled Steel">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="card-title mb-0">Recycled Steel</h5>
+                            <span class="badge bg-success">Eco</span>
+                        </div>
+                        <p class="card-text">High-strength structural steel with 95% recycled content, providing superior earthquake resistance.</p>
+                        <div class="d-flex justify-content-between mt-4">
+                            <div>
+                                <div class="small text-muted">Strength</div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" style="width: 97%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="small text-muted">Recycled Content</div>
+                                <div class="progress" style="height: 8px;">
+                                    <div class="progress-bar bg-success" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold mb-4">Stay Updated</h2>
+                    <p class="lead mb-5">Subscribe for exclusive project launches and special offers</p>
+                    
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-md-8">
+                            <div class="input-group">
+                                <input type="email" class="form-control form-control-lg" placeholder="Your email address">
+                                <button class="btn btn-light btn-lg px-4" type="button">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="residential">
+                            <label class="form-check-label" for="residential">Residential</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="commercial">
+                            <label class="form-check-label" for="commercial">Commercial</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="investment">
+                            <label class="form-check-label" for="investment">Investment</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="py-5 bg-gray-100">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-4 fw-bold mb-3">What Our Residents Say</h2>
+                <p class="lead text-muted mb-5">Experience the Singapoor Township difference</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" class="rounded-circle me-3" width="60" height="60" alt="Sarah Tan">
+                                <div>
+                                    <h5 class="mb-0">Sarah Tan</h5>
+                                    <div class="text-warning">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="card-text">"The attention to detail in our residence is exceptional. The smart home features make daily life so convenient, and the community amenities are world-class."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/men/44.jpg" class="rounded-circle me-3" width="60" height="60" alt="Raj Patel">
+                                <div>
+                                    <h5 class="mb-0">Raj Patel</h5>
+                                    <div class="text-warning">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="card-text">"Moving to Singapoor Township was the best decision for our family. The kids love the playgrounds, and we appreciate the security and sustainable features."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle me-3" width="60" height="60" alt="Emma Chen">
+                                <div>
+                                    <h5 class="mb-0">Emma Chen</h5>
+                                    <div class="text-warning">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="card-text">"The quality of construction is outstanding. Even after 5 years, everything looks and functions like new. The maintenance team is always responsive."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="py-5" id="contact">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="text-center text-lg-start">
+                        <h2 class="display-4 fw-bold mb-4">Contact Us</h2>
+                        <p class="lead mb-5">Have questions? Our team is ready to assist you</p>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-3">
+                                <i class="bi bi-geo-alt fs-3"></i>
+                            </div>
+                            <div>
+                                <h5>Visit Our Office</h5>
+                                <p class="mb-0">101 Thomson Road, #20-01<br>Singapore 307591</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-3">
+                                <i class="bi bi-telephone fs-3"></i>
+                            </div>
+                            <div>
+                                <h5>Call Us</h5>
+                                <p class="mb-0">+65 6123 4567<br>Mon-Fri: 9AM-6PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex align-items-start">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 me-3">
+                                <i class="bi bi-envelope fs-3"></i>
+                            </div>
+                            <div>
+                                <h5>Email Us</h5>
+                                <p class="mb-0">info@singapoortownship.com<br>sales@singapoortownship.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="mb-4">Send a Message</h3>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="firstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" placeholder="John">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" placeholder="Doe">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label">Phone</label>
+                                        <input type="tel" class="form-control" id="phone" placeholder="+65 9000 0000">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="interest" class="form-label">Interest In</label>
+                                        <select class="form-select" id="interest">
+                                            <option selected>Select an option</option>
+                                            <option>Residential Property</option>
+                                            <option>Commercial Space</option>
+                                            <option>Investment Opportunity</option>
+                                            <option>General Inquiry</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Message</label>
+                                        <textarea class="form-control" id="message" rows="4" placeholder="Your message"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="newsletterCheck">
+                                            <label class="form-check-label" for="newsletterCheck">
+                                                Subscribe to our newsletter
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary w-100 py-3">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h3 class="h5 mb-4">Singapoor Township</h3>
+                    <p class="text-white-50">Redefining urban living with sustainable, luxurious communities in Singapore.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="text-white"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-linkedin fs-5"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-youtube fs-5"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h3 class="h5 mb-4">Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none">About</a></li>
+                        <li class="mb-2"><a href="#projects" class="text-white text-decoration-none">Projects</a></li>
+                        <li class="mb-2"><a href="#materials" class="text-white text-decoration-none">Materials</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h3 class="h5 mb-4">Services</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Residential Projects</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Commercial Spaces</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Interior Design</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Renovation</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h3 class="h5 mb-4">Contact Us</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i> 101 Thomson Rd, Singapore 307591</li>
+                        <li class="mb-2"><i class="bi bi-telephone-fill me-2"></i> +65 6123 4567</li>
+                        <li class="mb-2"><i class="bi bi-envelope-fill me-2"></i> info@singapoortownship.com</li>
+                        <li class="mb-2"><i class="bi bi-clock-fill me-2"></i> Mon-Fri: 9AM-6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-white-50">&copy; 2023 Singapoor Township. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-white text-decoration-none me-3">Terms of Service</a>
+                    <a href="#" class="text-white text-decoration-none">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button type="button" class="btn btn-primary btn-floating btn-lg rounded-circle shadow" id="btn-back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Dark mode toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                themeToggle.innerHTML = '<i class="bi bi-moon-fill me-1"></i> <span>Dark</span>';
+                document.body.classList.remove('bg-dark');
+                document.body.classList.add('bg-gray-50');
+            } else {
+                html.classList.add('dark');
+                themeToggle.innerHTML = '<i class="bi bi-sun-fill me-1"></i> <span>Light</span>';
+                document.body.classList.remove('bg-gray-50');
+                document.body.classList.add('bg-dark');
+            }
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('btn-back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Simple AOS implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            const aosElements = document.querySelectorAll('[data-aos]');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('aos-animate');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            aosElements.forEach(el => {
+                el.classList.add('aos-init');
+                observer.observe(el);
+            });
+        });
+
+        // Property filter buttons
+        const filterButtons = document.querySelectorAll('.btn-group .btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

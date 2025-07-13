@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Singapoor Township</title>
+    <meta name="description" content="Get in touch with Singapore's premier construction and real estate development company">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .contact-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x1080');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+        }
+        .contact-info-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid blueviolet;
+        }
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .form-control:focus {
+            border-color: blueviolet;
+            box-shadow: 0 0 0 0.25rem rgba(138, 43, 226, 0.25);
+        }
+        .map-container {
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .form-floating label {
+            padding-left: 2.5rem;
+        }
+        .form-floating .bi {
+            position: absolute;
+            top: 1.2rem;
+            left: 1rem;
+            z-index: 5;
+        }
+        .btn-submit {
+            background-color: blueviolet;
+            border-color: blueviolet;
+        }
+        .btn-submit:hover {
+            background-color: #8a2be2;
+            border-color: #8a2be2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar (same as home page) -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bolder" href="#">Singapoor <span style="color: blueviolet;">Township</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="prtfo2.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-2">
+                        <button class="btn btn-outline-secondary theme-toggle" id="themeToggle">
+                            <i class="bi bi-moon-fill"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="contact-hero text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4">Contact Us</h1>
+            <p class="lead mb-5">We'd love to hear from you. Get in touch with our team today.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#contact-form" class="btn btn-primary btn-lg px-4">Send Message</a>
+                <a href="tel:+6561234567" class="btn btn-outline-light btn-lg px-4">
+                    <i class="bi bi-telephone me-2"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="card contact-info-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-start">
+                                <div class="me-3 text-primary">
+                                    <i class="bi bi-geo-alt fs-2"></i>
+                                </div>
+                                <div>
+                                    <h5 class="card-title fw-bold mb-3">Our Office</h5>
+                                    <p class="card-text mb-0">101 Thomson Road<br>#10-01 United Square<br>Singapore 307591</p>
+                                    <a href="#" class="btn btn-link p-0 mt-3" data-bs-toggle="modal" data-bs-target="#mapModal">View on map</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card contact-info-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-start">
+                                <div class="me-3 text-primary">
+                                    <i class="bi bi-telephone fs-2"></i>
+                                </div>
+                                <div>
+                                    <h5 class="card-title fw-bold mb-3">Phone & Email</h5>
+                                    <p class="card-text mb-1">
+                                        <a href="tel:+6561234567" class="text-decoration-none">+65 6123 4567</a>
+                                    </p>
+                                    <p class="card-text mb-0">
+                                        <a href="mailto:info@singapoortownship.com" class="text-decoration-none">info@singapoortownship.com</a>
+                                    </p>
+                                    <div class="mt-3">
+                                        <a href="#" class="btn btn-link p-0 me-3" data-bs-toggle="modal" data-bs-target="#callModal">
+                                            <i class="bi bi-telephone-outbound me-1"></i> Request Callback
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card contact-info-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-start">
+                                <div class="me-3 text-primary">
+                                    <i class="bi bi-clock fs-2"></i>
+                                </div>
+                                <div>
+                                    <h5 class="card-title fw-bold mb-3">Opening Hours</h5>
+                                    <p class="card-text mb-1">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                                    <p class="card-text mb-1">Saturday: 10:00 AM - 3:00 PM</p>
+                                    <p class="card-text mb-0">Sunday: Closed</p>
+                                    <div class="mt-3">
+                                        <a href="#" class="btn btn-link p-0" data-bs-toggle="modal" data-bs-target="#appointmentModal">
+                                            <i class="bi bi-calendar-check me-1"></i> Book Appointment
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact-form" class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4 p-md-5">
+                            <h2 class="display-5 fw-bold text-center mb-5">Send Us a Message</h2>
+                            <form id="contactForm" novalidate>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <i class="bi bi-person"></i>
+                                            <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                                            <label for="firstName">First Name</label>
+                                            <div class="invalid-feedback">
+                                                Please provide your first name.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <i class="bi bi-person"></i>
+                                            <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+                                            <label for="lastName">Last Name</label>
+                                            <div class="invalid-feedback">
+                                                Please provide your last name.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <i class="bi bi-envelope"></i>
+                                            <input type="email" class="form-control" id="email" placeholder="Email Address" required>
+                                            <label for="email">Email Address</label>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid email address.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <i class="bi bi-telephone"></i>
+                                            <input type="tel" class="form-control" id="phone" placeholder="Phone Number" required>
+                                            <label for="phone">Phone Number</label>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid phone number.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <i class="bi bi-card-heading"></i>
+                                            <select class="form-select" id="subject" required>
+                                                <option value="" selected disabled>Select a subject</option>
+                                                <option value="general">General Inquiry</option>
+                                                <option value="sales">Sales Inquiry</option>
+                                                <option value="service">Service Request</option>
+                                                <option value="support">Customer Support</option>
+                                                <option value="feedback">Feedback</option>
+                                            </select>
+                                            <label for="subject">Subject</label>
+                                            <div class="invalid-feedback">
+                                                Please select a subject.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <i class="bi bi-chat-left-text"></i>
+                                            <textarea class="form-control" id="message" placeholder="Your Message" style="height: 150px" required></textarea>
+                                            <label for="message">Your Message</label>
+                                            <div class="invalid-feedback">
+                                                Please enter your message.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="consent" required>
+                                            <label class="form-check-label" for="consent">
+                                                I agree to the <a href="#" class="text-decoration-none">privacy policy</a> and terms of service
+                                            </label>
+                                            <div class="invalid-feedback">
+                                                You must agree before submitting.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-center mt-4">
+                                        <button class="btn btn-primary btn-lg px-5 btn-submit" type="submit">
+                                            <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                            Send Message
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="display-5 fw-bold text-center mb-5">Find Us</h2>
+            <div class="map-container shadow-sm">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7973908786674!2d103.8377263153305!3d1.297915299054818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19a9364347e1%3A0x6c3ae32d6a7e4f0f!2sUnited%20Square!5e0!3m2!1sen!2ssg!4v1623837228477!5m2!1sen!2ssg" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="display-5 fw-bold text-center mb-5">Frequently Asked Questions</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item border-0 mb-3 shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    How soon can you start a new construction project?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>After the initial consultation and design approval, we typically begin construction within 4-6 weeks. This allows time for permits, material procurement, and crew scheduling. For urgent projects, we offer expedited timelines.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 mb-3 shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    What areas in Singapore do you serve?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>We provide services across all of Singapore, including main island and Sentosa. Our teams are strategically located to serve all regions efficiently.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 mb-3 shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Do you provide free estimates?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Yes, we offer complimentary estimates for all our services. After understanding your requirements, we'll provide a detailed, transparent quote with no obligation.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 shadow-sm">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    What warranties do you offer on your work?
+                                </button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>We provide a 10-year structural warranty on all new constructions and a 2-year warranty on renovations. All materials come with manufacturer warranties that we help facilitate if needed.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-5">
+                        <a href="#" class="btn btn-outline-primary px-4">View All FAQs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4">Ready to Start Your Project?</h2>
+            <p class="lead mb-5">Contact us today for a free consultation with our experts.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="tel:+6561234567" class="btn btn-light btn-lg px-4">
+                    <i class="bi bi-telephone me-2"></i> Call Now
+                </a>
+                <a href="#contact-form" class="btn btn-outline-light btn-lg px-4">Send Message</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as home page) -->
+    <footer class="bg-dark text-white pt-5">
+        <!-- Footer content from home page -->
+    </footer>
+
+    <!-- Map Modal -->
+    <div class="modal fade" id="mapModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Our Location</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="map-container" style="height: 500px;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7973908786674!2d103.8377263153305!3d1.297915299054818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19a9364347e1%3A0x6c3ae32d6a7e4f0f!2sUnited%20Square!5e0!3m2!1sen!2ssg!4v1623837228477!5m2!1sen!2ssg" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="https://maps.google.com?q=101+Thomson+Road,+United+Square,+Singapore+307591" target="_blank" class="btn btn-primary">
+                        <i class="bi bi-geo-alt me-2"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Callback Modal -->
+    <div class="modal fade" id="callModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Request a Callback</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="callbackName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="callbackName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="callbackPhone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="callbackPhone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="callbackTime" class="form-label">Preferred Callback Time</label>
+                            <select class="form-select" id="callbackTime">
+                                <option>Morning (9AM-12PM)</option>
+                                <option>Afternoon (1PM-5PM)</option>
+                                <option>Evening (6PM-8PM)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="callbackQuery" class="form-label">Your Query</label>
+                            <textarea class="form-control" id="callbackQuery" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Request Callback</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointment Modal -->
+    <div class="modal fade" id="appointmentModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Book an Appointment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="appointmentName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="appointmentName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="appointmentEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="appointmentEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="appointmentPhone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="appointmentPhone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="appointmentDate" class="form-label">Preferred Date</label>
+                            <input type="date" class="form-control" id="appointmentDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="appointmentService" class="form-label">Service Needed</label>
+                            <select class="form-select" id="appointmentService">
+                                <option>Construction Consultation</option>
+                                <option>Renovation Estimate</option>
+                                <option>Design Consultation</option>
+                                <option>Other Service</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Book Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            if (html.getAttribute('data-bs-theme') === 'dark') {
+                html.setAttribute('data-bs-theme', 'light');
+                themeToggle.innerHTML = '<i class="bi bi-moon-fill"></i>';
+            } else {
+                html.setAttribute('data-bs-theme', 'dark');
+                themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
+            }
+        });
+
+        // Form validation
+        (function () {
+            'use strict'
+            
+            const form = document.getElementById('contactForm');
+            
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                } else {
+                    const submitBtn = form.querySelector('.btn-submit');
+                    const spinner = submitBtn.querySelector('.spinner-border');
+                    
+                    // Show loading spinner
+                    submitBtn.disabled = true;
+                    spinner.classList.remove('d-none');
+                    
+                    // Simulate form submission
+                    setTimeout(function() {
+                        // Hide spinner and show success message
+                        spinner.classList.add('d-none');
+                        submitBtn.disabled = false;
+                        
+                        // Show success alert
+                        const alert = document.createElement('div');
+                        alert.className = 'alert alert-success alert-dismissible fade show mt-4';
+                        alert.innerHTML = `
+                            <strong>Thank you!</strong> Your message has been sent successfully.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        `;
+                        form.appendChild(alert);
+                        
+                        // Reset form
+                        form.reset();
+                        form.classList.remove('was-validated');
+                    }, 1500);
+                }
+                
+                form.classList.add('was-validated')
+            }, false)
+        })();
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Initialize tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    </script>
+</body>
+</html>

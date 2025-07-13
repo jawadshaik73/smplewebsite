@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Singapoor Township</title>
+    <meta name="description" content="Comprehensive construction and home services from Singapore's premier builder">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .service-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('cleaning.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+        }
+        .service-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border: none;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .service-card .card-img-top {
+            transition: transform 0.5s ease;
+            height: 200px;
+            object-fit: cover;
+        }
+        .service-card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: blueviolet;
+        }
+        .pricing-card {
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .pricing-card:hover {
+            border-color: blueviolet;
+            transform: scale(1.03);
+        }
+        .pricing-card .card-header {
+            background-color: rgba(138, 43, 226, 0.1);
+        }
+        .feature-list li {
+            margin-bottom: 0.5rem;
+        }
+        .feature-list li::before {
+            content: "✓";
+            color: blueviolet;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        .nav-pills .nav-link.active {
+            background-color: blueviolet;
+        }
+        .tab-content {
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar (same as home page) -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bolder" href="#">Singapoor <span style="color: blueviolet;">Township</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="prtfo2.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="service.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-2">
+                        <button class="btn btn-outline-secondary theme-toggle" id="themeToggle">
+                            <i class="bi bi-moon-fill"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="service-hero text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4">Our Services</h1>
+            <p class="lead mb-5">Comprehensive solutions for your construction and home needs</p>
+            <a href="#our-services" class="btn btn-primary btn-lg me-2">Explore Services</a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg">Get a Quote</a>
+        </div>
+    </section>
+
+    <!-- Services Tabs -->
+    <section class="py-5">
+        <div class="container">
+            <ul class="nav nav-pills justify-content-center mb-4" id="servicesTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="construction-tab" data-bs-toggle="pill" data-bs-target="#construction" type="button">Construction</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="renovation-tab" data-bs-toggle="pill" data-bs-target="#renovation" type="button">Renovation</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="maintenance-tab" data-bs-toggle="pill" data-bs-target="#maintenance" type="button">Maintenance</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="design-tab" data-bs-toggle="pill" data-bs-target="#design" type="button">Design</button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="servicesTabContent">
+                <div class="tab-pane fade show active" id="construction" role="tabpanel">
+                    <div class="row g-4">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card service-card h-100 shadow-sm">
+                                <div class="card-body text-center p-4">
+                                    <div class="service-icon">
+                                        <i class="bi bi-house-door"></i>
+                                    </div>
+                                    <h5 class="card-title fw-bold">Residential Construction</h5>
+                                    <p class="card-text">From bungalows to condominiums, we build homes that stand the test of time.</p>
+                                    <a href="#" class="btn btn-outline-primary stretched-link" data-bs-toggle="modal" data-bs-target="#residentialModal">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card service-card h-100 shadow-sm">
+                                <div class="card-body text-center p-4">
+                                    <div class="service-icon">
+                                        <i class="bi bi-building"></i>
+                                    </div>
+                                    <h5 class="card-title fw-bold">Commercial Projects</h5>
+                                    <p class="card-text">Office buildings, retail spaces, and mixed-use developments tailored to your needs.</p>
+                                    <a href="#" class="btn btn-outline-primary stretched-link">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card service-card h-100 shadow-sm">
+                                <div class="card-body text-center p-4">
+                                    <div class="service-icon">
+                                        <i class="bi bi-tree"></i>
+                                    </div>
+                                    <h5 class="card-title fw-bold">Green Buildings</h5>
+                                    <p class="card-text">Sustainable construction that meets Green Mark Platinum standards.</p>
+                                    <a href="#" class="btn btn-outline-primary stretched-link">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card service-card h-100 shadow-sm">
+                                <div class="card-body text-center p-4">
+                                    <div class="service-icon">
+                                        <i class="bi bi-palette"></i>
+                                    </div>
+                                    <h5 class="card-title fw-bold">Custom Homes</h5>
+                                    <p class="card-text">Bespoke residences designed and built to your exact specifications.</p>
+                                    <a href="#" class="btn btn-outline-primary stretched-link">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other tab panes would follow the same pattern -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Services -->
+    <section id="our-services" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="display-5 fw-bold text-center mb-5">Featured Services</h2>
+            
+            <div class="row align-items-center mb-5 g-4">
+                <div class="col-lg-6">
+                    <div class="ratio ratio-16x9">
+                        <img src="cleaning.jpg" class="img-fluid rounded-3 shadow object-fit-cover" alt="House Cleaning">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold display-5 mb-4">Professional House Cleaning</h2>
+                    <p class="lead">Our thorough cleaning services ensure your space is spotless and hygienic.</p>
+                    <ul class="feature-list">
+                        <li>Deep cleaning of all surfaces</li>
+                        <li>Eco-friendly cleaning products</li>
+                        <li>Customizable cleaning plans</li>
+                        <li>Trained and vetted staff</li>
+                        <li>Satisfaction guaranteed</li>
+                    </ul>
+                    <div class="d-flex gap-3 mt-4">
+                        <button class="btn btn-primary px-4" data-bs-toggle="modal" data-bs-target="#cleaningModal">Service Details</button>
+                        <button class="btn btn-outline-secondary px-4">View Packages</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row align-items-center mb-5 g-4 flex-lg-row-reverse">
+                <div class="col-lg-6">
+                    <div class="ratio ratio-16x9">
+                        <img src="carpentry.jpg" class="img-fluid rounded-3 shadow object-fit-cover" alt="Carpentry">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold display-5 mb-4">Expert Carpentry Services</h2>
+                    <p class="lead">Custom woodwork and furniture crafted with precision and care.</p>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3 text-primary">
+                                    <i class="bi bi-check2-circle fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Custom Cabinetry</h6>
+                                    <small class="text-muted">Tailored to your space</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3 text-primary">
+                                    <i class="bi bi-check2-circle fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Built-in Furniture</h6>
+                                    <small class="text-muted">Maximize your space</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3 text-primary">
+                                    <i class="bi bi-check2-circle fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Wood Flooring</h6>
+                                    <small class="text-muted">Premium materials</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3 text-primary">
+                                    <i class="bi bi-check2-circle fs-4"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0">Doors & Windows</h6>
+                                    <small class="text-muted">Precision fitting</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <button class="btn btn-primary px-4">Get a Quote</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <div class="ratio ratio-16x9">
+                        <img src="painting.jpg" class="img-fluid rounded-3 shadow object-fit-cover" alt="Painting">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold display-5 mb-4">Professional Painting</h2>
+                    <p class="lead">Transform your space with our premium painting services.</p>
+                    <div class="accordion accordion-flush" id="paintingAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#paintInterior">
+                                    Interior Painting
+                                </button>
+                            </h3>
+                            <div id="paintInterior" class="accordion-collapse collapse" data-bs-parent="#paintingAccordion">
+                                <div class="accordion-body">
+                                    <p>We use only low-VOC, environmentally friendly paints for interior spaces. Our process includes:</p>
+                                    <ul>
+                                        <li>Surface preparation and repair</li>
+                                        <li>Primer application</li>
+                                        <li>Two coats of premium paint</li>
+                                        <li>Clean-up and inspection</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#paintExterior">
+                                    Exterior Painting
+                                </button>
+                            </h3>
+                            <div id="paintExterior" class="accordion-collapse collapse" data-bs-parent="#paintingAccordion">
+                                <div class="accordion-body">
+                                    <p>Weather-resistant paints and specialized techniques for lasting exterior finishes:</p>
+                                    <ul>
+                                        <li>Pressure washing preparation</li>
+                                        <li>Mold and mildew treatment</li>
+                                        <li>Crack and surface repair</li>
+                                        <li>UV-protective coatings</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#paintSpecialty">
+                                    Specialty Finishes
+                                </button>
+                            </h3>
+                            <div id="paintSpecialty" class="accordion-collapse collapse" data-bs-parent="#paintingAccordion">
+                                <div class="accordion-body">
+                                    <p>Custom decorative finishes to elevate your space:</p>
+                                    <ul>
+                                        <li>Faux finishes</li>
+                                        <li>Textured coatings</li>
+                                        <li>Murals and decorative art</li>
+                                        <li>Metallic and pearlescent effects</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <button class="btn btn-primary px-4">Color Consultation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="display-5 fw-bold text-center mb-5">Service Packages</h2>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="card pricing-card h-100">
+                        <div class="card-header text-center py-4">
+                            <h4 class="fw-bold mb-0">Basic</h4>
+                            <div class="display-5 fw-bold my-3">$999</div>
+                            <small class="text-muted">per service</small>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-3"><i class="bi bi-check text-success me-2"></i> Standard cleaning</li>
+                                <li class="mb-3"><i class="bi bi-check text-success me-2"></i> 5-hour service window</li>
+                                <li class="mb-3"><i class="bi bi-check text-success me-2"></i> Eco-friendly products</li>
+                                <li class="mb-3"><i class="bi bi-x text-danger me-2"></i> No deep cleaning</li>
+                                <li class="mb-3"><i class="bi bi-x text-danger me-2"></i> No post-service inspection</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100">Select Plan</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card pricing-card h-100 border-primary">
+                        <div class="card-header text-center bg-primary bg-opacity-10 py-4">
+                            <h4 class="fw-bold mb-0">Premium</h4>
+                            <div class="display-5 fw-bold my-3">$1199</div>
+                            <small class="text-muted">per service</small>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-3"><i class="bi bi-check text-success me-2"></i> Deep cleaning included</li>
+                                <li class="mb-3"><i class="bi bi-check text-success me-2"></i> 3-hour service window</li>
+                                <li class="mb-3"><i class="bi bi-check text-success me-2"></i> Premium eco-products</li>
+                                <li class="mb-3"><i class="bi bi-check text-success me-2"></i> Post-service inspection</li>
+                                <li class="mb-3"><i class="bi bi-x text-danger me-2"></i> No priority scheduling</li>
+                            </ul>
+                            <button class="btn btn-primary w-100">Select Plan</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card pricing-card h-100">
+                        <div class="card-header text-center py-4">
+                            <h4 class="fw-bold mb-0">Platinum</h4>
+                            <div class="display-5 fw-bold my-3">$899<small class="text-muted">/mo</small></div>
+                            <small class="text-muted">subscription</small>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-3"><i class="bi bi-check text-success me-2"></i> Weekly cleaning</li>
+                                <li class="mb-3"><i class="bi bi-check text-success me-2"></i> 2-hour service window</li>
+                                <li class="mb-3"><i class="bi bi-check text-success me-2"></i> Premium products</li>
+                                <li class="mb-3"><i class="bi bi-check text-success me-2"></i> Priority scheduling</li>
+                                <li class="mb-3"><i class="bi bi-check text-success me-2"></i> Monthly deep clean</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100">Select Plan</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Cards -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="display-5 fw-bold text-center mb-5">More Services</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card service-card h-100 shadow-sm">
+                        <img src="plumbing.jpg" class="card-img-top" alt="Plumbing">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Plumbing Services</h5>
+                            <p class="card-text">Comprehensive plumbing solutions from repairs to installations.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">From $150</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card service-card h-100 shadow-sm">
+                        <img src="electrical.jpg" class="card-img-top" alt="Electrical">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Electrical Work</h5>
+                            <p class="card-text">Safe and reliable electrical installations and repairs.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">From $120</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card service-card h-100 shadow-sm">
+                        <img src="landscaping.jpg" class="card-img-top" alt="Landscaping">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Landscaping</h5>
+                            <p class="card-text">Beautiful outdoor spaces designed for Singapore's climate.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">From $500</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card service-card h-100 shadow-sm">
+                        <img src="smart-home.jpg" class="card-img-top" alt="Smart Home">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Smart Home</h5>
+                            <p class="card-text">Automation solutions for modern, connected living.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">From $800</span>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="display-5 fw-bold text-center mb-5">Our Process</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card border-0 bg-transparent text-center">
+                        <div class="card-body">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 d-inline-block mb-3">
+                                <i class="bi bi-chat-square-text fs-2"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Consultation</h5>
+                            <p class="card-text">We discuss your needs and vision for the project.</p>
+                            <span class="badge bg-primary rounded-pill">Step 1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card border-0 bg-transparent text-center">
+                        <div class="card-body">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 d-inline-block mb-3">
+                                <i class="bi bi-pencil-square fs-2"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Planning</h5>
+                            <p class="card-text">Detailed plans and 3D visualizations created.</p>
+                            <span class="badge bg-primary rounded-pill">Step 2</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card border-0 bg-transparent text-center">
+                        <div class="card-body">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 d-inline-block mb-3">
+                                <i class="bi bi-hammer fs-2"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Execution</h5>
+                            <p class="card-text">Skilled professionals bring the project to life.</p>
+                            <span class="badge bg-primary rounded-pill">Step 3</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card border-0 bg-transparent text-center">
+                        <div class="card-body">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 d-inline-block mb-3">
+                                <i class="bi bi-check-circle fs-2"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Completion</h5>
+                            <p class="card-text">Final inspection and handover with satisfaction guarantee.</p>
+                            <span class="badge bg-primary rounded-pill">Step 4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4">Ready to Transform Your Space?</h2>
+            <p class="lead mb-5">Contact us today for a free consultation and quote.</p>
+            <a href="contact.html" class="btn btn-light btn-lg px-5 me-3">Get Started</a>
+            <a href="tel:+6561234567" class="btn btn-outline-light btn-lg px-5">
+                <i class="bi bi-telephone me-2"></i> Call Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer (same as home page) -->
+    <footer class="bg-dark text-white pt-5">
+        <!-- Footer content from home page -->
+    </footer>
+
+    <!-- Cleaning Service Modal -->
+    <div class="modal fade" id="cleaningModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">House Cleaning Service Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="cleaning.jpg" class="img-fluid rounded mb-3" alt="Cleaning Service">
+                            <div class="alert alert-info">
+                                <i class="bi bi-info-circle-fill me-2"></i> All our cleaners are trained, insured, and background-checked.
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Service Includes:</h6>
+                            <ul class="list-group mb-3">
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Dusting all surfaces</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Vacuuming and mopping floors</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Kitchen and bathroom sanitization</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Window and mirror cleaning</li>
+                                <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Trash removal</li>
+                            </ul>
+                            <div class="mb-3">
+                                <label for="cleaningFrequency" class="form-label">Cleaning Frequency</label>
+                                <select class="form-select" id="cleaningFrequency">
+                                    <option selected>One-time cleaning</option>
+                                    <option>Weekly</option>
+                                    <option>Bi-weekly</option>
+                                    <option>Monthly</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary w-100">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            if (html.getAttribute('data-bs-theme') === 'dark') {
+                html.setAttribute('data-bs-theme', 'light');
+                themeToggle.innerHTML = '<i class="bi bi-moon-fill"></i>';
+            } else {
+                html.setAttribute('data-bs-theme', 'dark');
+                themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
+            }
+        });
+
+        // Initialize tooltips
+        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>

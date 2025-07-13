@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Singapoor Township - Our Story</title>
+    <meta name="description" content="Learn about Singapoor Township's history, mission, and commitment to quality construction">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .hero-section { 
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('bricks.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+        }
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: blueviolet;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid blueviolet;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            left: 50%;
+        }
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        .right::after {
+            left: -16px;
+        }
+        .content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        @media screen and (max-width: 600px) {
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            .left::after, .right::after {
+                left: 15px;
+            }
+            .right {
+                left: 0%;
+            }
+        }
+        .team-card {
+            transition: transform 0.3s;
+        }
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+        .team-img {
+            height: 250px;
+            object-fit: cover;
+        }
+        .stats-item {
+            border-left: 3px solid blueviolet;
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar (same as home page) -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bolder" href="#">Singapoor <span style="color: blueviolet;">Township</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="prtfo2.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-2">
+                        <button class="btn btn-outline-secondary theme-toggle" id="themeToggle">
+                            <i class="bi bi-moon-fill"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center mt-5">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4">Our Story</h1>
+            <p class="lead mb-5">Building dreams into reality since 1995</p>
+            <a href="#our-history" class="btn btn-primary btn-lg me-2">Our History</a>
+            <a href="#our-team" class="btn btn-outline-light btn-lg">Meet Our Team</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="display-5 fw-bold mb-4">Who We Are</h2>
+                    <p class="lead">Singapoor Township is a premier construction and real estate development company with a legacy of excellence spanning nearly three decades.</p>
+                    <p>Founded in 1995, we've grown from a small local builder to one of Singapore's most trusted names in luxury residential and commercial developments. Our commitment to quality, innovation, and customer satisfaction has remained unchanged throughout our journey.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <div class="stats-item">
+                            <h3 class="fw-bold">28+</h3>
+                            <p class="mb-0">Years Experience</p>
+                        </div>
+                        <div class="stats-item">
+                            <h3 class="fw-bold">150+</h3>
+                            <p class="mb-0">Projects Completed</p>
+                        </div>
+                        <div class="stats-item">
+                            <h3 class="fw-bold">98%</h3>
+                            <p class="mb-0">Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ratio ratio-16x9">
+                        <iframe class="rounded-3 shadow" src="https://www.youtube.com/embed/VIDEO_ID" title="About Singapoor Township" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission/Vision Section -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="mb-4">
+                                <i class="bi bi-eye-fill text-primary fs-1"></i>
+                            </div>
+                            <h3 class="h4 fw-bold mb-3">Our Vision</h3>
+                            <p>To redefine urban living in Singapore by creating sustainable, beautiful communities that stand the test of time while embracing modern innovation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4 text-center">
+                            <div class="mb-4">
+                                <i class="bi bi-bullseye text-primary fs-1"></i>
+                            </div>
+                            <h3 class="h4 fw-bold mb-3">Our Mission</h3>
+                            <p>To deliver exceptional quality and value through innovative design, superior craftsmanship, and unparalleled customer service at every stage of the building process.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Timeline -->
+    <section id="our-history" class="py-5">
+        <div class="container">
+            <h2 class="display-5 fw-bold text-center mb-5">Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-container left">
+                    <div class="content">
+                        <h3 class="h4 fw-bold">1995</h3>
+                        <p>Founded as a small construction firm with just 10 employees, undertaking residential renovation projects.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right">
+                    <div class="content">
+                        <h3 class="h4 fw-bold">2002</h3>
+                        <p>Completed our first major development project - a 50-unit condominium in central Singapore.</p>
+                    </div>
+                </div>
+                <div class="timeline-container left">
+                    <div class="content">
+                        <h3 class="h4 fw-bold">2008</h3>
+                        <p>Expanded operations to include commercial developments and won our first industry award for design excellence.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right">
+                    <div class="content">
+                        <h3 class="h4 fw-bold">2015</h3>
+                        <p>Launched our sustainable building initiative, reducing carbon footprint by 40% across all projects.</p>
+                    </div>
+                </div>
+                <div class="timeline-container left">
+                    <div class="content">
+                        <h3 class="h4 fw-bold">2020</h3>
+                        <p>Recognized as Singapore's "Builder of the Year" for our innovative approach to urban housing solutions.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right">
+                    <div class="content">
+                        <h3 class="h4 fw-bold">Present</h3>
+                        <p>Continuing to push boundaries in sustainable luxury living with projects across Southeast Asia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="our-team" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="display-5 fw-bold text-center mb-5">Meet Our Leadership</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card team-card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="card-img-top team-img" alt="CEO">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold mb-1">Tan Wei Liang</h5>
+                            <p class="text-muted small mb-3">Founder & CEO</p>
+                            <p class="card-text small">With over 30 years in the industry, Wei Liang's vision drives our company forward.</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#" class="text-dark"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" class="text-dark"><i class="bi bi-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card team-card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="card-img-top team-img" alt="Design Director">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold mb-1">Priya Sharma</h5>
+                            <p class="text-muted small mb-3">Design Director</p>
+                            <p class="card-text small">Award-winning architect with a passion for sustainable urban design.</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#" class="text-dark"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" class="text-dark"><i class="bi bi-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card team-card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" class="card-img-top team-img" alt="Construction Head">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold mb-1">Abdul Malik</h5>
+                            <p class="text-muted small mb-3">Head of Construction</p>
+                            <p class="card-text small">Ensures every project meets our exacting standards for quality and safety.</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#" class="text-dark"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" class="text-dark"><i class="bi bi-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card team-card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="card-img-top team-img" alt="Sustainability Officer">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold mb-1">Emma Chen</h5>
+                            <p class="text-muted small mb-3">Sustainability Officer</p>
+                            <p class="card-text small">Leads our green initiatives and ensures compliance with environmental standards.</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#" class="text-dark"><i class="bi bi-linkedin"></i></a>
+                                <a href="#" class="text-dark"><i class="bi bi-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Raw Materials Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="display-5 fw-bold text-center mb-5">Premium Materials</h2>
+            
+            <div class="row align-items-center mb-5 g-4">
+                <div class="col-lg-6">
+                    <div class="ratio ratio-16x9">
+                        <img src="bricks.jpg" class="img-fluid rounded-3 shadow object-fit-cover" alt="Bricks">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold display-5 mb-4">Artisan Bricks</h2>
+                    <p class="lead">Our bricks are crafted using a blend of traditional techniques and modern technology, ensuring durability and aesthetic appeal.</p>
+                    <div class="accordion accordion-flush" id="bricksAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#bricksFeature1">
+                                    Superior Durability
+                                </button>
+                            </h3>
+                            <div id="bricksFeature1" class="accordion-collapse collapse" data-bs-parent="#bricksAccordion">
+                                <div class="accordion-body">
+                                    Our bricks undergo rigorous testing to withstand Singapore's tropical climate, with a minimum compressive strength of 50N/mm².
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#bricksFeature2">
+                                    Thermal Efficiency
+                                </button>
+                            </h3>
+                            <div id="bricksFeature2" class="accordion-collapse collapse" data-bs-parent="#bricksAccordion">
+                                <div class="accordion-body">
+                                    Specially formulated to provide excellent thermal insulation, reducing energy costs by up to 15% compared to standard bricks.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#bricksFeature3">
+                                    Eco-Friendly Production
+                                </button>
+                            </h3>
+                            <div id="bricksFeature3" class="accordion-collapse collapse" data-bs-parent="#bricksAccordion">
+                                <div class="accordion-body">
+                                    Manufactured using 30% recycled materials and fired with clean energy sources to minimize environmental impact.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row align-items-center mb-5 g-4 flex-lg-row-reverse">
+                <div class="col-lg-6">
+                    <div class="ratio ratio-16x9">
+                        <img src="steel.jpg" class="img-fluid rounded-3 shadow object-fit-cover" alt="Steel">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold display-5 mb-4">High-Grade Steel</h2>
+                    <p class="lead">We source only the highest quality steel that meets international construction standards for strength and reliability.</p>
+                    <div class="progress mb-3" style="height: 10px;">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <small class="text-muted">Strength rating: 95/100</small>
+                    <div class="mt-4">
+                        <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#steelSpecsModal">View Specifications</button>
+                        <button class="btn btn-primary">Download Brochure</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <div class="ratio ratio-16x9">
+                        <img src="cement.jpg" class="img-fluid rounded-3 shadow object-fit-cover" alt="Cement">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold display-5 mb-4">Eco-Cement</h2>
+                    <p class="lead">Our proprietary cement blend reduces carbon footprint by 40% while providing superior strength and durability.</p>
+                    <div class="d-flex align-items-center mt-4">
+                        <div class="me-3">
+                            <i class="bi bi-tree-fill text-success fs-3"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0">Eco-Friendly Certified</h6>
+                            <small class="text-muted">Meets SGBC Green Mark Platinum standards</small>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="me-3 text-success">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div>40% lower CO2 emissions</div>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="me-3 text-success">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div>30% faster curing time</div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="me-3 text-success">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div>Enhanced resistance to humidity</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="display-5 fw-bold text-center mb-5">What Our Clients Say</h2>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="mb-4 text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="card-text mb-4">"Singapoor Township transformed our vision into a home that exceeded all expectations. Their attention to detail and commitment to quality is unmatched."</p>
+                            <div class="d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" class="rounded-circle me-3" width="50" height="50" alt="Client">
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Sarah Lim</h6>
+                                    <small class="text-muted">Thomson Heights Resident</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="mb-4 text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="card-text mb-4">"The team delivered our commercial project on time and under budget without compromising on any of the high-end finishes we requested."</p>
+                            <div class="d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/men/54.jpg" class="rounded-circle me-3" width="50" height="50" alt="Client">
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Raj Patel</h6>
+                                    <small class="text-muted">CEO, TechSolutions Pte Ltd</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="mb-4 text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <p class="card-text mb-4">"After working with several builders, we finally found one that truly understands luxury living. Their after-sales service is exceptional."</p>
+                            <div class="d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle me-3" width="50" height="50" alt="Client">
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Michelle Wong</h6>
+                                    <small class="text-muted">Sentosa Cove Homeowner</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="display-5 fw-bold text-center mb-5">Awards & Recognition</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="card border-0 bg-transparent">
+                        <img src="https://via.placeholder.com/150x80" class="card-img-top" alt="Award 1">
+                        <div class="card-body text-center p-0 mt-2">
+                            <h6 class="card-title mb-0">Builder of the Year 2020</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="card border-0 bg-transparent">
+                        <img src="https://via.placeholder.com/150x80" class="card-img-top" alt="Award 2">
+                        <div class="card-body text-center p-0 mt-2">
+                            <h6 class="card-title mb-0">Green Mark Platinum</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="card border-0 bg-transparent">
+                        <img src="https://via.placeholder.com/150x80" class="card-img-top" alt="Award 3">
+                        <div class="card-body text-center p-0 mt-2">
+                            <h6 class="card-title mb-0">Design Excellence</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="card border-0 bg-transparent">
+                        <img src="https://via.placeholder.com/150x80" class="card-img-top" alt="Award 4">
+                        <div class="card-body text-center p-0 mt-2">
+                            <h6 class="card-title mb-0">Safety First Award</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="card border-0 bg-transparent">
+                        <img src="https://via.placeholder.com/150x80" class="card-img-top" alt="Award 5">
+                        <div class="card-body text-center p-0 mt-2">
+                            <h6 class="card-title mb-0">Customer Choice</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4">Ready to Build Your Dream?</h2>
+            <p class="lead mb-5">Contact us today to discuss your project with our team of experts.</p>
+            <a href="contact.html" class="btn btn-light btn-lg px-5 me-3">Get in Touch</a>
+            <a href="service.html" class="btn btn-outline-light btn-lg px-5">Our Services</a>
+        </div>
+    </section>
+
+    <!-- Footer (same as home page) -->
+    <footer class="bg-dark text-white pt-5">
+        <!-- Footer content from home page -->
+    </footer>
+
+    <!-- Steel Specs Modal -->
+    <div class="modal fade" id="steelSpecsModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Steel Specifications</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Property</th>
+                                    <th>Value</th>
+                                    <th>Standard</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tensile Strength</td>
+                                    <td>550 MPa</td>
+                                    <td>ASTM A615</td>
+                                </tr>
+                                <tr>
+                                    <td>Yield Strength</td>
+                                    <td>420 MPa</td>
+                                    <td>BS 4449:2005</td>
+                                </tr>
+                                <tr>
+                                    <td>Elongation</td>
+                                    <td>14% min</td>
+                                    <td>ISO 6892-1</td>
+                                </tr>
+                                <tr>
+                                    <td>Bend Test</td>
+                                    <td>180°</td>
+                                    <td>EN 10002-1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="alert alert-info mt-3">
+                        <i class="bi bi-info-circle-fill me-2"></i> All our steel products come with full traceability and mill certificates.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Request Full Spec Sheet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            if (html.getAttribute('data-bs-theme') === 'dark') {
+                html.setAttribute('data-bs-theme', 'light');
+                themeToggle.innerHTML = '<i class="bi bi-moon-fill"></i>';
+            } else {
+                html.setAttribute('data-bs-theme', 'dark');
+                themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>
